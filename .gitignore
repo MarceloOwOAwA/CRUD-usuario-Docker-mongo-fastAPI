@@ -1,0 +1,11 @@
+# Ignorar carpetas de cache de Python
+__pycache__/
+
+#Ignorar carpeta de base de datos
+mongo_data/git 
+
+# Ignorar archivos compilados de Python
+*.pyc
+
+# Ignorar variables de entorno
+.env
