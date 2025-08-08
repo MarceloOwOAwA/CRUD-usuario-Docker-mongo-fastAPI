@@ -2,7 +2,7 @@
 __pycache__/
 
 #Ignorar carpeta de base de datos
-mongo_data/git 
+mongo_data/ 
 
 # Ignorar archivos compilados de Python
 *.pyc
