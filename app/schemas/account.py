@@ -83,3 +83,9 @@ class LoginRequest(BaseModel):
     def email_to_lower(cls,v):
         return v.lower()
     password: str = Field(..., example="Password123")
+
+#Modelo para eliminar usuario
+class DeleteUserRequest(BaseModel):
+    email: str = Field(..., example="email@email.com")
+    password: str = Field(..., example="Password123")
+    token : str = Field(..., example="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...")

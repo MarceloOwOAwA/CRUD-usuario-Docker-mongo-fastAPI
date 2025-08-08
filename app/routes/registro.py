@@ -19,7 +19,7 @@ async def register_user(user: AccountCreate):
     # Hasheamos la contraseña antes de guardarla
     hashed_password = get_password_hash(user.password)
     #Creamos el token JWT sujeto al email del usuario
-    token = create_access_token({"sub": user.email})
+    token = create_access_token({"email": user.email})
     #Ponemos la fecha actual en UTC
     now = datetime.now(timezone.utc)
     #Preparamos los datos del usuario para guardarlos en la base de datos

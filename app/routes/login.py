@@ -25,7 +25,7 @@ async def login_user(login_data: LoginRequest,db=Depends(get_mongo_db)):
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid credentials"
         )
-    token = create_access_token(data={"sub": user["email"]})
+    token = create_access_token(data={"email": user["email"]})
     now = datetime.now(timezone.utc)
     #Actualizamos campos en MongoDB
     await user_collection.update_one(
