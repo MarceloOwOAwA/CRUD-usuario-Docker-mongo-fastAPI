@@ -1,0 +1,24 @@
+services:
+  api:
+    build: .
+    container_name: user_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+
+  mongo:
+    image: mongo:7.0.14
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo_data:/data/db
+
+
+volumes:
+  mongo_data:

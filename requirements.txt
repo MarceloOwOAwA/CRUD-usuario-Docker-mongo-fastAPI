@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pymongo
+pydantic
+python-jose
+motor
+python-dotenv
+python-decouple
+motor
+pydantic[email]
+bcrypt>=3.2.0
