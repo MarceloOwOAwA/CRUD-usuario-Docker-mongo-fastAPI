@@ -10,6 +10,8 @@ services:
       - mongo
     environment:
       - MONGO_URI=mongodb://mongo:27017
+    networks:
+      - redprueba
 
   mongo:
     image: mongo:7.0.14
@@ -18,7 +20,8 @@ services:
       - "27017:27017"
     volumes:
       - ./mongo_data:/data/db
-
-
-volumes:
-  mongo_data:
+    networks:
+      - redprueba
+networks:
+  redprueba:
+    external: true
